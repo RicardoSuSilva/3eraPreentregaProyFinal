@@ -1,3 +1,4 @@
+import varenv from '../dotenv.js'
 import jwt from 'jsonwebtoken'
 
 export const generateToken = (user) => {
@@ -7,7 +8,7 @@ export const generateToken = (user) => {
         2°: Clave privada del cifrado
         3°: Tiempo de expiracion
     */
-    const token = jwt.sign({ user }, " ", { expiresIn: '12h' })
+    const token = jwt.sign({ user }, "coderhouse", { expiresIn: '12h' })
                                 /*,varenv.jwt_secret;*/
     return token
 
